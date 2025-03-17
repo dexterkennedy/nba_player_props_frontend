@@ -1,0 +1,80 @@
+#root {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%
+}
+
+main {
+  margin-top: 65px;
+  padding-bottom: 20px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+
+/* The default css settings for the main content div in each tab */
+.main-tab-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.main-tab-content .fetch-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #61dafb;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.main-tab-content .fetch-button:hover {
+  background-color: rgba(8, 72, 91, 0.886);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.datagrid-container {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.datagrid-container .MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.MuiTablePagination-toolbar.css-1gak8h1-MuiToolbar-root-MuiTablePagination-toolbar {
+  width: 200px;
+}

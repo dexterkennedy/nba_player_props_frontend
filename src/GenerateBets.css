@@ -1,0 +1,28 @@
+.generate-bets {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.generate-bets .fetch-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #61dafb;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.generate-bets .fetch-button:hover {
+    background-color: rgba(8, 72, 91, 0.886);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

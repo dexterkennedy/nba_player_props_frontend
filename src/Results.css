@@ -1,0 +1,46 @@
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.date-input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 150px;
+    box-sizing: border-box;
+}
+
+.date-input:focus {
+    border-color: rgba(8, 72, 91, 0.886);
+}
+
+.bet-correct {
+    background-color: #d9f7cd;
+}
+
+.bet-incorrect {
+    background-color: #FFC7C790;
+}
+
+h2 {
+    padding-top: 0px;
+}
+
