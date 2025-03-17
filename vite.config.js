@@ -4,5 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/nba_player_props_frontend/',
+  base: '/',
+  build: {
+    outDir: 'dist' // Vite's default build output folder
+  }
 })
