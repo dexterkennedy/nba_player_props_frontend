@@ -11,7 +11,7 @@ function About() {
             <div className="about-list">
                 <ol>
                     <li>Navigate to the "Generate Bets" tab</li>
-                    <li>Click on the ___ button and wait for the model to calculate its recommendations</li>
+                    <li>Click on the "Run Model" button and wait for the model to calculate its recommendations</li>
                     <li>The recommended bets will appear in the table with the player's name, bet type, and betting line</li>
                     <li>Additionally, the table includes the best sportbook on which to place the bet for the best line at the best odds</li>
                     <li>The margin field is a confidence metric. The higher the margin, the more confident the model is in that pick. However, be cautious. Margins that are too big to be true are sometimes caused by information that is not known to the model. Do your own research.</li>

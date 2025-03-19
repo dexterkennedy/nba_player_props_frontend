@@ -120,7 +120,7 @@ function GenerateBets() {
             </div>
 
             <button onClick={fetchData} disabled={loading} className="fetch-button">
-                {loading ? "Fetching Data..." : "Fetch Data"}
+                {loading ? "Running Model..." : "Run Model"}
             </button>
         </div>
     );
