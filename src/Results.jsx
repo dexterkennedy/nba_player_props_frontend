@@ -3,11 +3,9 @@ import { DataGrid } from "@mui/x-data-grid";
 import './Results.css';
 import './App.css'
 
-function Results() {
-    const [results, setResults] = useState([]);
+function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
     const [loading, setLoading] = useState(false);
     const [date, setDate] = useState("");
-    const [lifetimeStats, setLifetimeStats] = useState({})
 
     const fetchData = async () => {
 
@@ -72,8 +70,8 @@ function Results() {
             headerName: "Result",
             width: 80,
             valueGetter: (params) => {
-                return params === 1 ? "Won" : "Lost";
-              },
+                return params.value === 1 ? "Won" : "Lost";
+            },
         }
     ];
 
@@ -86,7 +84,7 @@ function Results() {
                 </button>
                 <input
                     type="date"
-                    value={new Date().toISOString().split("T")[0]}
+                    value={date}
                     onChange={(e) => setDate(e.target.value)}
                     className="date-input"
                 />
@@ -102,18 +100,18 @@ function Results() {
                     rowHeight={40}
                     getRowClassName={(params) => {
                         const resultValue = params.row.result;
-                        if (resultValue == 1) {
+                        if (resultValue === 1) {
                             return 'bet-correct';
-                        } else if (resultValue == 0) {
+                        } else if (resultValue === 0) {
                             return 'bet-incorrect';
                         }
                     }}
                     sortModel={[
                         {
-                          field: 'date',
-                          sort: 'desc',
+                            field: 'date',
+                            sort: 'desc',
                         },
-                      ]}
+                    ]}
                 />
             </div>
 

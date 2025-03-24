@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Snackbar, Alert, LinearProgress } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -7,8 +7,7 @@ import Typography from "@mui/material/Typography";
 import "./GenerateBets.css";
 import "./App.css";
 
-function GenerateBets() {
-    const [bets, setBets] = useState([]);
+function GenerateBets({ bets, setBets }) {
     const [loading, setLoading] = useState(false);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -53,7 +52,7 @@ function GenerateBets() {
         );
     }
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         setLoading(true);
         setSnackbarOpen(true);
         setProgress(0);
@@ -63,14 +62,16 @@ function GenerateBets() {
             const elapsed = Date.now() - startTime;
             const newProgress = (elapsed / progressDuration) * 100;
             setProgress(newProgress >= 100 ? 100 : newProgress);
-        }, 1000); // Update every second
+        }, 1000);
 
         try {
             const response = await fetch("https://nba-player-props.fly.dev/generate-recommendations");
+            if (!response.ok) throw new Error("Failed to fetch recommendations.");
             const result = await response.json();
             setBets(result);
         } catch (error) {
             console.error("Error fetching bets:", error);
+            alert("Error fetching bets. Please try again.");
         } finally {
             clearInterval(progressInterval);
             setProgress(100);
@@ -79,7 +80,8 @@ function GenerateBets() {
                 setLoading(false);
             }, 500);
         }
-    };
+    }, [setBets]);
+
 
     useEffect(() => {
         console.log("Bets updated:", bets);
@@ -87,10 +89,10 @@ function GenerateBets() {
 
     const rows = Array.isArray(bets)
         ? bets.map((bet, index) => ({
-              ...bet,
-              id: index + 1,
-              best_odds: decimalToAmericanOdds(bet.best_odds),
-          }))
+            ...bet,
+            id: index + 1,
+            best_odds: decimalToAmericanOdds(bet.best_odds),
+        }))
         : [];
 
     const columns = [
