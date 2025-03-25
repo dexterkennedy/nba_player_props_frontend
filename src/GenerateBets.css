@@ -3,26 +3,26 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    padding: 20px;
+    padding: 2.5vh 1.33vw;
     overflow-x: auto;
     box-sizing: border-box;
 }
 
 .generate-bets .fetch-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin-top: 2.5vh;
+    padding: 1.25vh 1.33vw;
+    font-size: 2vh;
     background-color: #61dafb;
     color: black;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.67vw;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .generate-bets .fetch-button:hover {
     background-color: rgba(8, 72, 91, 0.886);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5vh 0.75vh rgba(0, 0, 0, 0.1);
 }

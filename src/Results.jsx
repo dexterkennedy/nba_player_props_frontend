@@ -117,25 +117,26 @@ function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
 
             <div className="lifetime-results">
                 <h2>Lifetime Results</h2>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '40px' }}>
-                    <div style={{ textAlign: 'center' }}>
+                <div className="stats-container">
+                    <div className="stats-item">
                         <p>Total Picks</p>
                         <p>{lifetimeStats["total_picks"]}</p>
                     </div>
-                    <div style={{ textAlign: 'center' }}>
+                    <div className="stats-item">
                         <p>Correct Picks</p>
                         <p>{lifetimeStats["total_correct"]}</p>
                     </div>
-                    <div style={{ textAlign: 'center' }}>
+                    <div className="stats-item">
                         <p>Win Rate</p>
                         <p>{lifetimeStats["percentage"]}%</p>
                     </div>
-                    <div style={{ textAlign: 'center' }}>
+                    <div className="stats-item">
                         <p>Unit +/-</p>
                         <p>{lifetimeStats["unit_plus_minus"]}</p>
                     </div>
                 </div>
             </div>
+
 
         </div >
     );

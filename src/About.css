@@ -3,9 +3,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    padding: 20px;
+    padding: 2.5vh 1.33vh;
     overflow-x: auto;
     box-sizing: border-box;
 }
@@ -19,7 +19,7 @@
     text-align: left;
     width: 100%;
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto 2.5vh;
 }
 
 .about-list {
@@ -32,7 +32,7 @@
 .about-list li {
     text-align: left;
     max-width: 800px;
-    padding: 5px 0px 0px 20px;
+    padding: 0.67vh 0 0 1.33vw;
 }
 
 .about-list ol {
