@@ -61,10 +61,10 @@ function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
 
     const columns = [
         { field: "id", headerName: "ID", flex: 0.5, minWidth: 20, disableColumnMenu: true },
-        { field: "player", headerName: "Player", flex: 1.5, minWidth: 60, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
-        { field: "date", headerName: "Date", flex: 1, minWidth: 40, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
-        { field: "bet_type", headerName: "Bet Type", flex: 1, minWidth: 40, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
-        { field: "line", headerName: "Line", flex: 1, minWidth: 40, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "player", headerName: "Player", flex: 1.5, minWidth: 60, disableColumnMenu: true, sortable: false, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "date", headerName: "Date", flex: 1, minWidth: 40, disableColumnMenu: true, sortable: false, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "bet_type", headerName: "Bet Type", flex: 1, minWidth: 40, disableColumnMenu: true, sortable: false, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "line", headerName: "Line", flex: 1, minWidth: 40, disableColumnMenu: true, sortable: false, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
         {
             field: "result",
             headerName: "Result",
