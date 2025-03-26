@@ -75,7 +75,7 @@ function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
             valueGetter: (params) => (params.value === 1 ? "Won" : "Lost"),
         }
     ];
-    
+
 
     return (
         <div className="main-tab-content">
@@ -113,6 +113,13 @@ function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
                             sort: 'desc',
                         },
                     ]}
+                    sx={{
+                        "& .MuiDataGrid-columnHeaderTitle": {
+                            whiteSpace: "normal", // Allow wrapping
+                            overflow: "visible",  // Prevent ellipsis
+                            textOverflow: "unset", // Remove ellipsis
+                        }
+                    }}
                 />
             </div>
 
