@@ -96,14 +96,16 @@ function GenerateBets({ bets, setBets }) {
         : [];
 
     const columns = [
-        { field: "id", headerName: "ID", width: 50 },
-        { field: "player", headerName: "Player", width: 180 },
-        { field: "bet_type", headerName: "Bet Type", width: 100 },
-        { field: "best_line", headerName: "Best Line", width: 100 },
-        { field: "best_book", headerName: "Best Book", width: 130 },
-        { field: "best_odds", headerName: "Best Odds", width: 100 },
-        { field: "margin", headerName: "Margin", width: 100 },
+        { field: "id", headerName: "ID", minWidth: 50, maxWidth: 100, disableColumnMenu: true },
+        { field: "player", headerName: "Player", minWidth: 60, flex: 1.5, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "bet_type", headerName: "Bet Type", minWidth: 40, flex: 1, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "best_line", headerName: "Line", minWidth: 40, flex: 1 , disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "best_book", headerName: "Book", minWidth: 52, flex: 1.3, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "best_odds", headerName: "Odds", minWidth: 40, flex: 1, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "margin", headerName: "Margin", minWidth: 40, flex: 1, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
     ];
+
+
 
     return (
         <div className="main-tab-content">
@@ -118,7 +120,6 @@ function GenerateBets({ bets, setBets }) {
                     slots={{
                         loadingOverlay: CustomLoadingOverlay,
                     }}
-                    disableColumnResize
                 />
             </div>
 

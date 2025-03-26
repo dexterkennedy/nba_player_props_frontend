@@ -1,4 +1,4 @@
-.results {
+/* .results {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -8,7 +8,7 @@
     padding: 2.5vh 1.33vh;
     overflow-x: auto;
     box-sizing: border-box;
-}
+} */
 
 .controls {
     display: flex;

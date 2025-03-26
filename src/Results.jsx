@@ -60,20 +60,22 @@ function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
     }));
 
     const columns = [
-        { field: "id", headerName: "ID", width: 50 },
-        { field: "player", headerName: "Player", width: 180 },
-        { field: "date", headerName: "Date", width: 100 },
-        { field: "bet_type", headerName: "Bet Type", width: 100 },
-        { field: "line", headerName: "Line", width: 100 },
+        { field: "id", headerName: "ID", flex: 0.5, minWidth: 20, disableColumnMenu: true },
+        { field: "player", headerName: "Player", flex: 1.5, minWidth: 60, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "date", headerName: "Date", flex: 1, minWidth: 40, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "bet_type", headerName: "Bet Type", flex: 1, minWidth: 40, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
+        { field: "line", headerName: "Line", flex: 1, minWidth: 40, disableColumnMenu: true, renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div> },
         {
             field: "result",
             headerName: "Result",
-            width: 80,
-            valueGetter: (params) => {
-                return params.value === 1 ? "Won" : "Lost";
-            },
+            flex: 0.8,
+            minWidth: 40,
+            disableColumnMenu: true,
+            renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div>,
+            valueGetter: (params) => (params.value === 1 ? "Won" : "Lost"),
         }
     ];
+    
 
     return (
         <div className="main-tab-content">
@@ -96,7 +98,6 @@ function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
                     pageSize={10}
                     rowsPerPageOptions={[5, 10, 20]}
                     loading={loading}
-                    disableColumnResize
                     rowHeight={40}
                     getRowClassName={(params) => {
                         const resultValue = params.row.result;
