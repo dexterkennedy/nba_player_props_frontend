@@ -71,8 +71,10 @@ function Results({ results, setResults, lifetimeStats, setLifetimeStats }) {
             flex: 0.8,
             minWidth: 40,
             disableColumnMenu: true,
-            renderCell: (params) => <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{params.value}</div>,
-            valueGetter: (params) => (params.value === 1 ? "Won" : "Lost"),
+            renderCell: (params) => {
+                const displayValue = params.value === 1 ? "Won" : "Lost";
+                return <div style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>{displayValue}</div>;
+            }
         }
     ];
 
